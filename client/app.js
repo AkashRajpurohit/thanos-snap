@@ -1,9 +1,10 @@
-const API_KEY = 'your-api-key-here';
+const API_KEY = '1120ce04fc4346ab3b07e1713345f22a';
 const charactersElement = document.querySelector('.characters');
 const snapElement = document.querySelector('#snap');
 const thanosElement = document.querySelector('#thanos');
 const clickThanosElement = document.querySelector('#clickThanos');
 const theTruth = document.querySelector('#the-truth');
+const avengeTheFallen = document.querySelector('#avenge');
 
 const introSound = document.querySelector('#intro-sound');
 const snapSound = document.querySelector('#snap-sound');
@@ -22,8 +23,10 @@ function getCharacterData() {
       localStorage.characterData = JSON.stringify(data);
       return data;
     });
+  
 }
 
+// Removing teams and thanos himself
 const hiddenCharacters = {
   1009652: true,
   1009165: true,
@@ -77,7 +80,7 @@ function thanosClick() {
       funeralSound.play();
       balanceUniverse();
     }, 2000);
-  }, 5000);
+  }, 13000);
 }
 
 function balanceUniverse() {
@@ -108,6 +111,9 @@ function kill(characters, leftToDie) {
     }, 1300);
   } else {
     theTruth.style.opacity = '1';
+    setTimeout(() => {
+      avengeTheFallen.style.opacity = '1';
+    }, 3000)
     fadeOutFuneralMusic();
   }
 }
